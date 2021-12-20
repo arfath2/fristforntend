@@ -11,21 +11,39 @@ body{
 background-color: lightblue;    }
 </style>
 <body>
-    <h1>Book a call</h1>
-    <h3>Book a call slot and ourrepresentative will call you with in one hour of selected time</h3>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
-    <form>
-        <label for="name">Name</label><br>
-        <input type="text" id="name"><br>
-        <label for="email">Email</label><br>
-        <input type="email" id="email"><br>
-        <label for="email">Phone number</label><br>
-        <input type="number" id="phonenumber"><br>
-        <label for="time">Time for call</label><br>
-        <input type="date" id="date">
-        <input type="time" id="time">
-        <input type="submit" onclick="getacall()" value="GET A CALL">
-      </form>
+<!-- Latest compiled and minified JavaScript -->
+<header id="main-header" class="bg-success text-white p-4 mb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+            <h1 id="header-title">Item Lister</h1>
+        </div>
+        <div class="col-md-6 align-self-center">
+            <input type="text" class="form-control" id="filter" placeholder="Search Items...">
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+   <div id="main" class="card card-body">
+    <h2 id="add" class="title">Add Items</h2>
+    <form id="addForm" class="form-inline mb-3">
+      <input type="text" class="form-control mr-2" id="item">
+      <input type="submit" class="btn btn-dark" value="Submit">
+    </form>
+    <h2 class="title">Items</h2>
+    <ul id="items" class="list-group">
+      <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+      <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+      <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+      <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+    </ul>
+   </div>
+  </div>
     <script src="index.js">
         
     </script>
