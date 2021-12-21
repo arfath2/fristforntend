@@ -32,37 +32,64 @@
 
 //parentElement
 
-var itemList = document.querySelector('#items');
-itemList.parentElement.style.backgroundColor = 'grey'
+// var itemList = document.querySelector('#items');
+// itemList.parentElement.style.backgroundColor = 'grey'
 
-console.log(itemList.firstChild);
-console.log(itemList.firstElementChild);
-itemList.firstElementChild.textContent = 'hello1'
+// console.log(itemList.firstChild);
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'hello1'
 
-console.log(itemList.lastChild);
-console.log(itemList.lastElementChild);
-itemList.lastElementChild.textContent = 'hello4'
-
-
-console.log(itemList.nextSibling);
-console.log(itemList.nextElementSibling);
-//itemList.nextElementSibling.textContent = 'hello4'
-
-console.log(itemList.previousSibling);
-console.log(itemList.previousElementSibling);
-itemList.previousElementSibling.style.backgroundColor = 'yellow'
+// console.log(itemList.lastChild);
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'hello4'
 
 
-//create div
+// console.log(itemList.nextSibling);
+// console.log(itemList.nextElementSibling);
+// //itemList.nextElementSibling.textContent = 'hello4'
 
-var newDiv = document.querySelector('div');
-newDiv.className = 'hello';
-newDiv.id = 'hey';
-newDiv.setAttribute('title','helloworld');
-var newDivText = document.createTextNode('HelloWorld');
-newDiv.appendChild(newDivText);
+// console.log(itemList.previousSibling);
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.backgroundColor = 'yellow'
 
-var container = document.querySelector('header .container');
-var h1 = document.querySelector('header h1');
+
+// //create div
+
+// var newDiv = document.querySelector('div');
+// newDiv.className = 'hello';
+// newDiv.id = 'hey';
+// newDiv.setAttribute('title','helloworld');
+// var newDivText = document.createTextNode('HelloWorld');
+// newDiv.appendChild(newDivText);
+
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
  
-container.insertBefore(newDiv,h1);
+// container.insertBefore(newDiv,h1);
+
+// Add item
+var form = document.getElementById('addForm');
+form.addEventListener('submit', addItem);
+function addItem(e){
+  e.preventDefault();
+  var newItem = document.getElementById('item').value;
+  var li = document.createElement('li');
+  li.className = 'list-group-item';
+  li.appendChild(document.createTextNode(newItem));
+  var deleteBtn = document.createElement('button');
+  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+  deleteBtn.appendChild(document.createTextNode('X'));
+  li.appendChild(deleteBtn);
+  items.appendChild(li);
+}
+
+var itemList = document.getElementById('items');
+itemList.addEventListener('click', removeItem);
+function removeItem(e){
+  if(e.target.classList.contains('delete')){
+    if(confirm('Are You Sure?')){
+      var li = e.target.parentElement;
+      items.removeChild(li);
+    }
+  }
+}
