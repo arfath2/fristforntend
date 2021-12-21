@@ -8,6 +8,10 @@ Title.style.color = 'green';
 var items = document.getElementsByClassName('list-group-item');
 items[2].style.backgroundColor = 'green'
 
-for(var i=0;i<=items.length;i++){
-  items[i].style.fontWeight='bold'
-}
+// for(var i=0;i<=items.length;i++){
+//   items[i].style.fontWeight='bold'
+// }
+
+var lists = document.getElementsByTagName('li');
+console.log(lists)
+lists[1].style.backgroundColor = 'red'
